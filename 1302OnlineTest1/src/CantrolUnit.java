@@ -5,17 +5,18 @@ public class CantrolUnit {
 	
 	BallotUnit connection;
 	DisplaySection display;
-	ArrayList<Candidates> candidates;
+	
 	ResltSection result;
 	ButtonSection button;
 
 	public CantrolUnit() {
-		candidates=new ArrayList<Candidates>();
+		
 		display=new DisplaySection();
+		result=new ResltSection();
 		
 	}
 	public void SetCandidate(ArrayList<Candidates> candidates,BallotUnit b){
-		this.candidates=candidates;
+		
 		connection=b;
 		connection.markSlots(candidates,this);
 	}
@@ -25,10 +26,8 @@ public class CantrolUnit {
 	public void clearBusyLamp() {
 		display.clearBusyLamp();
 	}
-	public void getRsult() {
-		for(int i=0;i<candidates.size();i++){
-			System.out.println(candidates.get(i).getName()+" => "+candidates.get(i).getVotes());
-		}
+	public Candidates getRsult() {
+		return result.getResult(connection);
 		
 	}
 	

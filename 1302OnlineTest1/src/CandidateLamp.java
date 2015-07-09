@@ -1,6 +1,6 @@
 
 public class CandidateLamp {
 public void glowLamp(){
-	System.out.println("green lamp");
+	//System.out.println("red lamp");
 }
 }

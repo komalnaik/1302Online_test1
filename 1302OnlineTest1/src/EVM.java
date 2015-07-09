@@ -7,7 +7,7 @@ CantrolUnit cu;
 public EVM() {
 	
 	cu=new CantrolUnit();
-	bu=new BallotUnit();
+	bu=BallotUnit.getInstance();
 }
 public void setcandidate(ArrayList<Candidates> c) {
 	cu.SetCandidate(c, bu);
@@ -16,7 +16,7 @@ public void pressButton(int i) {
 	bu.pressButton(i);
 }
 public void getResul() {
-	cu.getRsult();
+	System.out.println(cu.getRsult().getName());
 }
 
 

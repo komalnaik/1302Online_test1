@@ -5,13 +5,16 @@ public class Slot {
 	CandidateLamp candidateLamp;
 	public Slot(Candidates cand) {
 		super();
-		this.candidate_button = new Button(cand);
 		candidateLamp=new CandidateLamp();
+		this.candidate_button = new Button(cand,candidateLamp);
 	}
 	public void pressButton() {
-		candidate_button.vote();
-		candidateLamp.glowLamp();
+		candidate_button.pressButton();
 		
+		
+	}
+	public Candidates getCandidate() {
+		return candidate_button.getCandidate();
 	}
 
 

@@ -1,4 +1,3 @@
-
 public class ReadyLamp {
 	public void switchLampOn(){
 		

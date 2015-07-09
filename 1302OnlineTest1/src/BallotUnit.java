@@ -2,14 +2,20 @@ import java.util.ArrayList;
 
 
 public class BallotUnit {
-	
+	static BallotUnit myInstance=null;
 	Slot[] slots=new Slot[16];
 	ReadyLamp lamp;
 	int maskFrom;
 	CantrolUnit cu;
 	
-	public BallotUnit() {
+	private BallotUnit() {
 		
+	}
+	public static BallotUnit getInstance(){
+		if(myInstance==null){
+			myInstance=new BallotUnit();
+		}
+		return myInstance;
 	}
 
 	public void markSlots(ArrayList<Candidates> candidates,CantrolUnit c) {
@@ -35,6 +41,15 @@ public class BallotUnit {
 	}
 	public void close(){
 		maskFrom=0;
+	}
+
+	public ArrayList<Candidates> getCandidates() {
+		
+		ArrayList<Candidates> ret=new ArrayList<Candidates>();
+		for(int i=0;i<maskFrom;i++){
+			ret.add(slots[i].getCandidate());
+		}
+		return ret;
 	}
 
 	
