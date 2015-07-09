@@ -1,10 +1,20 @@
+import java.util.ArrayList;
+
 
 public class test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//
-		//test
+		ArrayList<Candidates> c=new ArrayList<Candidates>();
+		
+		c.add(new Candidates("candidate1"));
+		c.add(new Candidates("candidate2"));
+		c.add(new Candidates("candidate3"));
+		EVM evm=new EVM();
+		
+		evm.setcandidate(c);
+		evm.vote(0);
+		
+		
 	}
 
 }
