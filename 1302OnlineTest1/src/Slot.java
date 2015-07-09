@@ -8,7 +8,7 @@ public class Slot {
 		this.candidate_button = new Button(cand);
 		candidateLamp=new CandidateLamp();
 	}
-	public void vote() {
+	public void pressButton() {
 		candidate_button.vote();
 		candidateLamp.glowLamp();
 		

@@ -12,9 +12,13 @@ public class test {
 		EVM evm=new EVM();
 		
 		evm.setcandidate(c);
-		evm.vote(0);
+		evm.pressButton(0);
+		evm.pressButton(0);
+		evm.pressButton(2);
+		evm.pressButton(0);
+		evm.pressButton(1);
 		
-		
+		evm.getResul();
 	}
 
 }
